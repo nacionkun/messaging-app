@@ -6,3 +6,4 @@ import os
 app = Flask(__name__)
 
 from app import hello
+from app import getDataSources

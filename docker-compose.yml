@@ -15,4 +15,4 @@ services:
     links:
       - mongo
     environment:
-      - "MONGO=mongodb://mongo/7in14"
+      - "MONGO=mongodb://mongo/r1v4"
