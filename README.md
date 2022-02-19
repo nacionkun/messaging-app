@@ -12,5 +12,8 @@ docker exec -it messaging-app-web-1 /bin/bash
 ## hello
 curl -v http://localhost:4001/hello
 
-## get data sources
-curl -v http://localhost:4001/dataSources
+## get messages
+curl -v http://localhost:4001/messages
+
+## add message
+curl -X 'PUT' http://localhost:4001/message -d '{"sender":"Ryan", "message":"This is a test message."}' -H 'content-type: application/json'
