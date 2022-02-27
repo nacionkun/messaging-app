@@ -7,4 +7,6 @@ app = Flask(__name__)
 
 from app import hello
 from app import getMessages
+from app import getMessage
 from app import addMessage
+from app import deleteMessage

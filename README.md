@@ -17,3 +17,9 @@ curl -v http://localhost:4001/messages
 
 ## add message
 curl -X 'PUT' http://localhost:4001/message -d '{"sender":"Ryan", "message":"This is a test message."}' -H 'content-type: application/json'
+
+## get single message
+curl -v http://localhost:4001/message/621bb0c9ae5dc4000152715a
+
+## delete single message
+curl -X 'DELETE' -v http://localhost:4001/message/621bb3a6f9a91c000125835d

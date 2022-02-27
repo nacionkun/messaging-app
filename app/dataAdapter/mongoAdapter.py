@@ -25,14 +25,14 @@ class mongoAdapter:
         return mongo
 
     def get_all(self):
-        return self.__get_mongo().db.dataSources.find({})
+        return self.__get_mongo().db.messages.find({})
 
     def add_one(self, data):
-        return self.__get_mongo().db.dataSources.insert_one(data)
+        return self.__get_mongo().db.messages.insert_one(data)
 
     def remove_one(self, id):
-        return self.__get_mongo().db.dataSources.delete_one({'_id': ObjectId(id)})
+        return self.__get_mongo().db.messages.delete_one({'_id': ObjectId(id)})
 
     def get_one(self, id):
-        return self.__get_mongo().db.dataSources.find_one_or_404(ObjectId(id))
+        return self.__get_mongo().db.messages.find_one_or_404(ObjectId(id))
 
