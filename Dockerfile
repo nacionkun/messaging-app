@@ -6,4 +6,4 @@ RUN pip3 install -r requirements.txt
 ENTRYPOINT ["python3"]
 CMD ["app.py"]
 
-EXPOSE 27017
+# EXPOSE 27017 or 2001

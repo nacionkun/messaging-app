@@ -5,7 +5,6 @@ import os
 
 mongo = None
 
-
 class mongoAdapter:
 
     # constructor
@@ -15,9 +14,13 @@ class mongoAdapter:
     def __get_mongo(self):
         global mongo
 
+        # MONGO=mongodb://mongo/r1v4 --> check docker-compose.yaml
+        # app.config["MONGO_URI"] = "mongodb://localhost:27017/myDatabase"
+        # getenv: if MONGO env param not found, use explicit default param
+        # HOST 2001/TCP is mapped to CONTAINER 27107/TCP
         if 'MONGO_URI' not in self.app.config:
             self.app.config['MONGO_URI'] = os.getenv(
-                'MONGO', 'mongodb://localhost:27017/mdb_r1v4') #mdb_r1v4:my_database_name
+                'MONGO', 'mongodb://localhost:2001/mdb_r1v4') 
 
         if not mongo:
             mongo = PyMongo(self.app)
